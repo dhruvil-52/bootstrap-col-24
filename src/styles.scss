@@ -1,1 +1,18 @@
-/* You can add global styles to this file, and also import other style files */
+// styles.scss
+
+// Define custom grid variables
+$grid-columns: 24;
+$grid-gutter-width: 20px; // Optional: adjust gutter width as needed
+
+// Import Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+// styles.scss
+
+// Define custom grid classes
+@for $i from 1 through $grid-columns {
+    .col-#{$i} {
+        flex: 0 0 percentage(($i / $grid-columns));
+        max-width: percentage(($i / $grid-columns));
+    }
+}
